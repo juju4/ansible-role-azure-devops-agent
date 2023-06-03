@@ -1,3 +1,4 @@
+---
 az_devops_agent_dependencies:
   - libcurl3
   - libgssapi-krb5-2
