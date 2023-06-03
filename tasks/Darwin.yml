@@ -20,7 +20,7 @@
     path: "{{ item }}"
     owner: "{{ az_devops_agent_user }}"
     group: "{{ az_devops_agent_group }}"
-    mode: 0755
+    mode: '0755'
   loop:
     - "{{ az_devops_launchagent_folder }}"
     - "{{ az_devops_agent_folder }}"
@@ -55,7 +55,7 @@
   register: svc_sh
   become: true
   changed_when: false
-  check_mode: no
+  check_mode: false
 
 - name: Check service status
   ansible.builtin.command:
@@ -66,7 +66,7 @@
     chdir: "{{ az_devops_agent_folder }}"
   register: svc_status
   changed_when: false
-  check_mode: no
+  check_mode: false
   when: svc_sh.stat.exists
 
 - name: Set agent config facts
@@ -184,7 +184,7 @@
     section: null
     option: "{{ item.key }}"
     value: "{{ item.value }}"
-    no_extra_spaces: yes
+    no_extra_spaces: true
     owner: "{{ az_devops_agent_user }}"
     group: "{{ az_devops_agent_group }}"
     mode: '0600'

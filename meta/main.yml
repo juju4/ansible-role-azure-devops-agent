@@ -5,6 +5,7 @@ galaxy_info:
   author: gsoft
   description: Azure DevOps Agent for Linux.
   company: GSoft
+  standalone: true
 
   license: "license (Apache-2.0)"
 

@@ -11,7 +11,7 @@
   loop_control:
     loop_var: varfile
 
-# - debug:
+# - ansible.builtin.debug:
 #     msg:
 #     - "Dependency lookup variables are :"
 #     - "ansible_distribution: {{ ansible_distribution }}"

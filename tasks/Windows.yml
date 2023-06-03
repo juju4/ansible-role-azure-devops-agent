@@ -6,7 +6,7 @@
     password: "{{ az_devops_agent_password }}"
     state: present
     password_never_expires: true
-  become: yes
+  become: true
   when:
     - az_devops_agent_create_local_user
 
