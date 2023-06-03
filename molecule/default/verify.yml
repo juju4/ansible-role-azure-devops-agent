@@ -1,0 +1,7 @@
+---
+
+- name: Verify
+  hosts: adoagents
+  tasks:
+    - name: Placeholder
+      ansible.builtin.ping:
