@@ -32,6 +32,18 @@
     cache_valid_time: "{{ az_devops_agent_apt_cache_valid | default(3600) }}"
   when: ansible_os_family == "Debian"
 
+- name: Ubuntu jammy | ssl1.1
+  when: ansible_distribution_release == 'jammy'
+  block:
+    - name: Ubuntu jammy | Download legacy ssl
+      ansible.builtin.get_url:
+        url: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+        dest: /var/tmp/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+        mode: '0644'
+    - name: Ubuntu jammy | install legacy ssl for ADO agent
+      ansible.builtin.apt:
+        deb: /var/tmp/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+
 - name: Install dependencies
   ansible.builtin.package:
     name: "{{ az_devops_agent_dependencies }}"

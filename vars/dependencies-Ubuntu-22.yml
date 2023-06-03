@@ -1,0 +1,12 @@
+---
+az_devops_agent_dependencies:
+  - libcurl4
+  - libgssapi-krb5-2
+  - libicu70
+  # https://stackoverflow.com/questions/73301049/no-usable-version-of-libssl-was-found-after-inserting-pat-in-azure-self-hosted
+  # https://github.com/microsoft/azure-pipelines-agent/issues/2454
+  # https://github.com/microsoft/azure-pipelines-agent/issues/3834#issuecomment-1164461892
+  # libssl3 not supported. workaround manual libssl1.1 install
+  # - libssl1.1
+  - openssl
+  - acl
