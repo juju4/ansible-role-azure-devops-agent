@@ -1,5 +1,10 @@
 ---
 
+- name: Ensure ado agent group exists
+  ansible.builtin.group:
+    name: "{{ az_devops_agent_group }}"
+    state: present
+
 - name: Add an agent user
   ansible.builtin.user:
     name: "{{ az_devops_agent_user }}"
