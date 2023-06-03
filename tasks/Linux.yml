@@ -26,6 +26,12 @@
     - "{{ az_devops_work_folder }}"
   become: true
 
+- name: Debian | Refresh apt cache
+  ansible.builtin.apt:
+    update_cache: yes
+    cache_valid_time: "{{ az_devops_agent_apt_cache_valid | default(3600) }}"
+  when: ansible_os_family == "Debian"
+
 - name: Install dependencies
   ansible.builtin.package:
     name: "{{ az_devops_agent_dependencies }}"
