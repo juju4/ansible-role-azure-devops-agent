@@ -95,15 +95,15 @@ Available variables are listed below, along with default values (see `defaults/m
 
 - **az_devops_deployment_group_tags**
 
-  Use in conjuction with the `deployment` agent role. Allows the use of tags to identify the agent (ex: QA, Staging, Prod, etc.)
+  Use in conjunction with the `deployment` agent role. Allows the use of tags to identify the agent (ex: QA, Staging, Prod, etc.)
 
 - **az_devops_deployment_group_name**
 
-  Use in conjuction with the `deployment` agent role. The name of the deployment group in which to add the agent.  **This needs to be manually created in you Azure DevOps project beforehand.**
+  Use in conjunction with the `deployment` agent role. The name of the deployment group in which to add the agent.  **This needs to be manually created in you Azure DevOps project beforehand.**
 
 - **az_devops_environment_name**
 
-  Use in conjuction with the `resource` agent role. The name of the environment in which to add the VM resource.  **This needs to be manually created in you Azure DevOps project beforehand.**
+  Use in conjunction with the `resource` agent role. The name of the environment in which to add the VM resource.  **This needs to be manually created in you Azure DevOps project beforehand.**
 
 - **az_devops_agent_replace_existing**
 
@@ -135,7 +135,7 @@ Available variables are listed below, along with default values (see `defaults/m
 
 - **az_devops_agent_user_capabilties**
 
-  A Dictionary of environment variables to set for the agent process which translate to User Capabilties which can be helpful for setting [release pipeline demands](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/demands?view=azure-devops&tabs=yaml)
+  A Dictionary of environment variables to set for the agent process which translate to User Capabilities which can be helpful for setting [release pipeline demands](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/demands?view=azure-devops&tabs=yaml)
 
   Example usage:
 
